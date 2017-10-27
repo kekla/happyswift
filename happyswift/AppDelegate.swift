@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CBPeripheralDelegate, CBCentralManagerDelegate {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        
+    }
+    
 
     var window: UIWindow?
 
@@ -26,8 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             rootViewController: ViewController())
         self.window!.rootViewController = nav
         
+        nav.setNavigationBarHidden(true, animated: true)
+        
         // 將 UIWindow 設置為可見的
         self.window!.makeKeyAndVisible()
+        
+        BLE.sharedInstance
+        
         
         return true
     }

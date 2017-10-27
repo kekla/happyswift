@@ -9,15 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let main_view = mainView(frame: CGRect(x: 0, y: 24, width: UIScreen.main.bounds.size.width, height: 100))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let button = UIButton()
+        
+        
+        main_view.backgroundColor = .red
+        
         button.setTitle("GO!!", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.addTarget(self, action: #selector(btn_go), for: .touchUpInside)
         
         self.view.addSubview(button)
+        self.view.addSubview(main_view)
+        
         
         button.autoCenterInSuperview()
         
@@ -30,9 +37,21 @@ class ViewController: UIViewController {
     }
     
     func btn_go() {
-        self.navigationController?.pushViewController(mainVC(), animated: true)
+        let main_vc = mainVC()
+        main_vc.text_view_value = main_view.text_view.text
+        BLE.sharedInstance.scaned_items = [String]()
+        print(main_view.text_view.text)
+        
+        BLE.sharedInstance.centralManager.stopScan()
+        
+//        let timer = Timer.scheduledTimer(timeInterval: 25.0, target: self, selector: #selector(stopScan), userInfo: nil, repeats: false)
+        BLE.sharedInstance.centralManager.scanForPeripherals(withServices: nil, options: nil)
+//        mainView.btnScan.setTitle("Scanning...", for: .normal)
+        self.navigationController?.pushViewController(main_vc, animated: true)
     }
 
-
+    func stopScan() {
+        BLE.sharedInstance.centralManager.stopScan()
+    }
 }
 

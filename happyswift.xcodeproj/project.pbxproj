@@ -10,6 +10,9 @@
 		69CFD9BD987FB0661B13B972 /* Pods_happyswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086968FD605E16EDC908ED1F /* Pods_happyswift.framework */; };
 		A20159531F74F9E300ACCC1E /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20159521F74F9E300ACCC1E /* NavbarView.swift */; };
 		A20159551F750BB100ACCC1E /* NavbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20159541F750BB100ACCC1E /* NavbarDelegate.swift */; };
+		A2106D4B1FA33C3500B621CD /* MyTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2106D4A1FA33C3500B621CD /* MyTableViewDelegate.swift */; };
+		A218ECD61F7E41150009DE2A /* AdvanceSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218ECD51F7E41150009DE2A /* AdvanceSettingView.swift */; };
+		A2AC73E81F90B3DA0043F0B4 /* BLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC73E71F90B3DA0043F0B4 /* BLE.swift */; };
 		A2BDC43F1F6280250065C775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BDC43E1F6280250065C775 /* AppDelegate.swift */; };
 		A2BDC4411F6280250065C775 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BDC4401F6280250065C775 /* ViewController.swift */; };
 		A2BDC4441F6280250065C775 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2BDC4421F6280250065C775 /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		086968FD605E16EDC908ED1F /* Pods_happyswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_happyswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20159521F74F9E300ACCC1E /* NavbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
 		A20159541F750BB100ACCC1E /* NavbarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavbarDelegate.swift; sourceTree = "<group>"; };
+		A2106D4A1FA33C3500B621CD /* MyTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewDelegate.swift; sourceTree = "<group>"; };
+		A218ECD51F7E41150009DE2A /* AdvanceSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvanceSettingView.swift; sourceTree = "<group>"; };
+		A2AC73E71F90B3DA0043F0B4 /* BLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLE.swift; sourceTree = "<group>"; };
 		A2BDC43B1F6280250065C775 /* happyswift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = happyswift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2BDC43E1F6280250065C775 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2BDC4401F6280250065C775 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A2106D491FA33C0900B621CD /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A20159541F750BB100ACCC1E /* NavbarDelegate.swift */,
+				A2106D4A1FA33C3500B621CD /* MyTableViewDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		A218ECD31F7E3CE20009DE2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2EA57DD1F6280E600729AB3 /* mainView.swift */,
+				A20159521F74F9E300ACCC1E /* NavbarView.swift */,
+				A218ECD51F7E41150009DE2A /* AdvanceSettingView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A218ECD41F7E3CF90009DE2A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2EA57DB1F6280D400729AB3 /* mainVC.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A2AC73E61F90B3C60043F0B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2AC73E71F90B3DA0043F0B4 /* BLE.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		A2BDC4321F6280250065C775 = {
 			isa = PBXGroup;
 			children = (
@@ -129,16 +170,16 @@
 		A2BDC43D1F6280250065C775 /* happyswift */ = {
 			isa = PBXGroup;
 			children = (
+				A2106D491FA33C0900B621CD /* Delegates */,
+				A2AC73E61F90B3C60043F0B4 /* Models */,
 				A2BDC43E1F6280250065C775 /* AppDelegate.swift */,
 				A2BDC4401F6280250065C775 /* ViewController.swift */,
-				A20159541F750BB100ACCC1E /* NavbarDelegate.swift */,
 				A2BDC4421F6280250065C775 /* Main.storyboard */,
 				A2BDC4451F6280250065C775 /* Assets.xcassets */,
 				A2BDC4471F6280250065C775 /* LaunchScreen.storyboard */,
 				A2BDC44A1F6280250065C775 /* Info.plist */,
-				A2EA57DB1F6280D400729AB3 /* mainVC.swift */,
-				A2EA57DD1F6280E600729AB3 /* mainView.swift */,
-				A20159521F74F9E300ACCC1E /* NavbarView.swift */,
+				A218ECD41F7E3CF90009DE2A /* ViewControllers */,
+				A218ECD31F7E3CE20009DE2A /* Views */,
 			);
 			path = happyswift;
 			sourceTree = "<group>";
@@ -360,7 +401,10 @@
 				A2EA57DE1F6280E600729AB3 /* mainView.swift in Sources */,
 				A20159531F74F9E300ACCC1E /* NavbarView.swift in Sources */,
 				A2BDC43F1F6280250065C775 /* AppDelegate.swift in Sources */,
+				A218ECD61F7E41150009DE2A /* AdvanceSettingView.swift in Sources */,
 				A2EA57DC1F6280D400729AB3 /* mainVC.swift in Sources */,
+				A2106D4B1FA33C3500B621CD /* MyTableViewDelegate.swift in Sources */,
+				A2AC73E81F90B3DA0043F0B4 /* BLE.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

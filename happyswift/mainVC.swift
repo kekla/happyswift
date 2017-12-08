@@ -82,13 +82,19 @@ class mainVC: UIViewController, MyTableViewDelegate, NavbarDelegate, UITableView
         
         cell.textLabel?.text = BLE.sharedInstance.scaned_items[indexPath.row]
         cell.textLabel?.textColor = .black
-        if (BLE.sharedInstance.scaned_items[indexPath.row] == "tracMo 0001E2FE0BFB") {
+        // if (BLE.sharedInstance.scaned_items[indexPath.row] == "tracMo 0001E2FE0BFB")
+        if (BLE.sharedInstance.scaned_items[indexPath.row] == "tracMo B09122655077") {
             cell.textLabel?.textColor = .white
             cell.backgroundColor = .blue
             cell.textLabel?.backgroundColor = .blue
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var p = BLE.sharedInstance.peripherals[indexPath.row]
+        BLE.sharedInstance.centralManager.connect(p)
     }
     
     func reload_data() {
@@ -100,6 +106,10 @@ class mainVC: UIViewController, MyTableViewDelegate, NavbarDelegate, UITableView
     
     override func viewDidDisappear(_ animated: Bool) {
         BLE.sharedInstance.centralManager.stopScan()
+        if (BLE.sharedInstance.connected_item != nil) {
+            BLE.sharedInstance.centralManager.cancelPeripheralConnection(BLE.sharedInstance.connected_item)
+        }
+        
     }
 }
 
